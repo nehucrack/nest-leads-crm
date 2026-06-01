@@ -42,16 +42,19 @@ export default function FilterBar({
           ))}
         </select>
 
-        {/* Filtro por estado */}
+        {/* Filtro por etapa del pipeline */}
         <select
           value={filterEstado}
           onChange={e => setFilterEstado(e.target.value)}
           className="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 bg-white"
         >
-          <option value="">Todos los estados</option>
-          <option value="pendiente">Pendiente</option>
-          <option value="calificada">Calificada</option>
-          <option value="descartada">Descartada</option>
+          <option value="">Todas las etapas</option>
+          <option value="prospecto">🔵 Prospecto</option>
+          <option value="contactado">📨 Contactado</option>
+          <option value="reunion_agendada">📅 Reunión Agendada</option>
+          <option value="negociacion">🤝 Negociación</option>
+          <option value="cerrado_ganado">🏆 Cerrado ✓</option>
+          <option value="cerrado_perdido">❌ Perdido</option>
         </select>
 
         {/* Botón limpiar filtros (solo aparece si hay algo activo) */}

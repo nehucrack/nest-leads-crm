@@ -16,11 +16,23 @@ const FLAGS = {
   'Panamá':      '🇵🇦',
 }
 
-// Colores para cada estado del pipeline
+// Colores para cada etapa del pipeline
 const ESTADO_STYLES = {
-  pendiente:  'bg-yellow-100 text-yellow-800',
-  calificada: 'bg-green-100  text-green-800',
-  descartada: 'bg-gray-100   text-gray-500',
+  prospecto:        'bg-blue-100    text-blue-800',
+  contactado:       'bg-indigo-100  text-indigo-800',
+  reunion_agendada: 'bg-purple-100  text-purple-800',
+  negociacion:      'bg-orange-100  text-orange-800',
+  cerrado_ganado:   'bg-green-100   text-green-800',
+  cerrado_perdido:  'bg-gray-100    text-gray-500',
+}
+
+const ESTADO_LABELS = {
+  prospecto:        'Prospecto',
+  contactado:       'Contactado',
+  reunion_agendada: 'Reunión Agendada',
+  negociacion:      'Negociación',
+  cerrado_ganado:   'Cerrado ✓',
+  cerrado_perdido:  'Perdido',
 }
 
 export default function EmpresasTable({
@@ -124,9 +136,12 @@ export default function EmpresasTable({
                     }}
                     className={`text-xs font-medium px-2 py-1 rounded-full border-0 cursor-pointer ${ESTADO_STYLES[empresa.estado]}`}
                   >
-                    <option value="pendiente">pendiente</option>
-                    <option value="calificada">calificada</option>
-                    <option value="descartada">descartada</option>
+                    <option value="prospecto">Prospecto</option>
+                    <option value="contactado">Contactado</option>
+                    <option value="reunion_agendada">Reunión Agendada</option>
+                    <option value="negociacion">Negociación</option>
+                    <option value="cerrado_ganado">Cerrado ✓</option>
+                    <option value="cerrado_perdido">Perdido</option>
                   </select>
                 </td>
 
